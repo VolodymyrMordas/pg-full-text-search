@@ -1,0 +1,26 @@
+{
+  "name": "search-app-backend",
+  "version": "1.0.0",
+  "description": "postgres full text search example",
+  "author": "Volodymyr Mordas",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack",
+    "start": "./build/index.js -m 5 --minUptime 1000",
+    "start:dev": "NODE_ENV=development webpack",
+    "run:dev": "NODE_ENV=development nodemon build/index.js"
+  },
+  "dependencies": {
+    "@types/express": "^4.17.2",
+    "express": "^4.17.1",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.5",
+    "webpack-node-externals": "^1.7.2",
+    "webpack-shell-plugin": "^0.5.0"
+  }
+}
