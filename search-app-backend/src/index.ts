@@ -1,6 +1,4 @@
-import {app} from "./express-server";
-
-export { app } from './express-server';
+import {app} from './express-server';
 
 const {
   PORT = 8080,

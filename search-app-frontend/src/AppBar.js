@@ -1,13 +1,10 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
-import {Box} from "@material-ui/core";
-
-//API
-import { search } from './api';
+import { Box } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
   grow: {
@@ -71,24 +68,11 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export const SearchAppBar = () => {
+export const SearchAppBar = ({ onChange }) => {
   const classes = useStyles();
   
-  useEffect(() => {
-    async function fetchData(){
-      const searchValue = await search();
-      console.log('ξ * ->', searchValue);
-    }
-    fetchData()
-  }, []);
-  
-  const onChangeHandler = async () => {
-    const searchValue = await search();
-    console.log('ξ * searchValue->', searchValue);
-  };
-  
   return (
-    <Box className={classes.grow} mb={2}>
+    <Box mb={2}>
       <AppBar position="static">
         <Toolbar>
           <div className={classes.search}>
@@ -96,7 +80,7 @@ export const SearchAppBar = () => {
               <SearchIcon />
             </div>
             <InputBase
-              onChange={onChangeHandler}
+              onChange={onChange}
               placeholder="Search…"
               classes={{
                 root: classes.inputRoot,
