@@ -8,27 +8,29 @@ import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 
 const columns = [
-  { id: 'name', label: 'Name', minWidth: 170 },
-  { id: 'code', label: 'ISO\u00a0Code', minWidth: 100 },
+  { id: 'title', label: 'title', minWidth: 100 },
   {
-    id: 'population',
-    label: 'Population',
+    id: 'owner',
+    label: 'owner',
     minWidth: 170,
-    align: 'right',
     format: value => value.toLocaleString(),
   },
   {
-    id: 'size',
-    label: 'Size\u00a0(km\u00b2)',
+    id: 'index',
+    label: 'index',
     minWidth: 170,
-    align: 'right',
     format: value => value.toLocaleString(),
   },
   {
-    id: 'density',
-    label: 'Density',
+    id: 'created',
+    label: 'created',
     minWidth: 170,
-    align: 'right',
+    format: value => value.toFixed(2),
+  },
+  {
+    id: 'updated',
+    label: 'updated',
+    minWidth: 170,
     format: value => value.toFixed(2),
   },
 ];

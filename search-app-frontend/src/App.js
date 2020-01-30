@@ -4,7 +4,7 @@ import Container from '@material-ui/core/Container';
 
 import { SearchAppBar } from "./AppBar";
 import { AppResultTable } from "./AppResultTable";
-import { AppFilterPanel } from "./AppFilterPanel";
+
 import { search } from "./api";
 
 const App = () => {
@@ -28,7 +28,6 @@ const App = () => {
       <CssBaseline />
       <Container fixed>
         <SearchAppBar onChange={onChangeHandler} />
-        <AppFilterPanel />
         <AppResultTable data={data}/>
       </Container>
     </>
